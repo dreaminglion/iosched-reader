@@ -42,11 +42,11 @@ public class LogUtils {
 
     public static void LOGD(final String tag, String message) {
         if (LOGGING_ENABLED){
-//            if (Log.isLoggable(tag, Log.DEBUG)) {
-//                Log.d(tag, message);
-//            }
-            if (Log.isLoggable(tag, Log.INFO)) {
-                Log.i(tag, message);
+            if (Log.isLoggable(tag, Log.DEBUG)) {
+                Log.d(tag, message);
+            }
+            else {
+                Log.d(tag, message);
             }
         }
     }
