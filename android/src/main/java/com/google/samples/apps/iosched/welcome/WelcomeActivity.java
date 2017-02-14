@@ -61,6 +61,7 @@ public class WelcomeActivity extends AppCompatActivity implements WelcomeFragmen
 
         // Wire up the fragment
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        // 实现接口的fragment，直接强转为fragment
         fragmentTransaction.add(R.id.welcome_content, (Fragment) mContentFragment);
         fragmentTransaction.commit();
 
@@ -111,6 +112,7 @@ public class WelcomeActivity extends AppCompatActivity implements WelcomeFragmen
         List<WelcomeActivityContent> welcomeActivityContents = getWelcomeFragments();
 
         for (WelcomeActivityContent fragment : welcomeActivityContents) {
+            // 通过shared preference来确定welcome fragment的协议用户是否同意
             if (fragment.shouldDisplay(context)) {
                 return fragment;
             }
